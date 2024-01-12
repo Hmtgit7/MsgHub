@@ -19,6 +19,10 @@ const SignUp = () => {
 
   const handleClick = () => setShow(!show);
 
+  const postDetails = (pics) => {};
+
+  const submitHandler = () => {};
+
   return (
     <VStack spacing="5px">
       <FormControl>
@@ -66,13 +70,23 @@ const SignUp = () => {
         </InputGroup>
       </FormControl>
       <FormControl>
-        <FormLabel>Email</FormLabel>
-        <Input type="file"
-          placeholder="Enter Your Email"
-          onChange={(e) => setEmail(e.target.value)}
+        <FormLabel>Upload Your Picture</FormLabel>
+        <Input
+          type="file"
+          p={1.5}
+          accept="image/*"
+          onChange={(e) => postDetails(e.target.files[0])}
         />
       </FormControl>
-      <Button spacing="5px">SignUp</Button>
+      <Button
+        colorScheme="blue"
+        width="100%"
+        color="white"
+        style={{ marginTop: 15 }}
+        onClick={submitHandler}
+      >
+        SignUp
+      </Button>
     </VStack>
   );
 };
